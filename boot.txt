@@ -1,0 +1,53 @@
+# Disable spi and i2c, we need these pins.
+dtparam=spi=off
+dtparam=i2c_arm=off
+
+dtoverlay=dpi24
+
+# Set screen size and any overscan required
+overscan_left=0
+overscan_right=0
+overscan_top=0
+overscan_bottom=0
+framebuffer_width=800
+framebuffer_height=320
+
+# enable the DPI display
+enable_dpi_lcd=1
+display_default_lcd=1
+
+# set up the size to 800x320
+dpi_group=2
+dpi_mode=87
+
+# set up the hsync/vsync/clock polarity and format
+#dpi_output_format=0x330117
+dpi_output_format=0x330027
+
+
+# set up the size to 800x320
+#dpi_timings=800 0 40 30 16 320 0 16 13 10 0 0 0 60 0 32000000 8
+dpi_timings=800 0 45 67 20 320 0 16 17 10 0 0 0 60 0 32000000 8
+
+display_rotate=2
+
+
+dtoverlay=pi3-disable-bt
+dtoverlay=uart0,txd0_pin=36,rxd0_pin=37,pin_func=6 #alt2
+#start_x=0
+#gpu_mem=256
+
+#disable_splash=1
+#disable_overscan=0dtoverlay=vc4-kms-v3d
+#hdmi_force_hotplug=1
+#hdmi_group=1
+#hdmi_mode=16
+
+#temp_limi=85
+#arm_freq_min=300
+#core_freq_min=200
+#sdram_freq_min=400
+
+#arm_freq=700
+#gpu_freq=200
+#initial_turbo=60
