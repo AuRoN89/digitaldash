@@ -1,0 +1,15 @@
+[Unit]
+Description=Run the DD webapp
+After=networking.target
+
+[Service]
+Environment=PORT=80
+Environment=ORIGIN=http://kedigitaldash.com
+WorkingDirectory=/digitaldash/frontend
+ExecStart=/usr/bin/node build
+Restart=always
+User=root
+Type=simple
+
+[Install]
+WantedBy=multi-user.target

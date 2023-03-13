@@ -1,0 +1,12 @@
+[Unit]
+Description=Run the DD Kivy GUI
+After=smbd.service
+
+[Service]
+Environment=Display=:0
+ExecStart=python3.11 /digitaldash/main.py
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
