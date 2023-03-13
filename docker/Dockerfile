@@ -3,6 +3,7 @@ LABEL version="1.0"
 LABEL description="Dockerfile to build DD ISO"
 
 ENV CARGO_NET_GIT_FETCH_WITH_CLI=true
+ENV PATH="/root/.cargo/bin:$PATH"
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y update
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install \
@@ -30,7 +31,7 @@ RUN wget https://www.python.org/ftp/python/3.11.1/Python-3.11.1.tar.xz
 RUN tar -xf Python-3.11.1.tar.xz
 WORKDIR "/Python-3.11.1"
 RUN ./configure
-RUN make altinstall
+RUN make altinstall -j `nproc`
 
 WORKDIR "/digitaldash"
 
@@ -45,8 +46,8 @@ RUN cp docker/*.service /etc/systemd/system/
 
 WORKDIR "/digitaldash/frontend"
 
-RUN curl -sL https://deb.nodesource.com/setup_11.x | -E bash -
-RUN apt-get install -y nodejs npm
+RUN curl -sL https://deb.nodesource.com/setup_19.x | bash -s
+RUN apt-get install -y nodejs
 
 RUN npm install --include=dev
 RUN npm run build
