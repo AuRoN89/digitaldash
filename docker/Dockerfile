@@ -41,6 +41,8 @@ RUN python3.11 -m pip install -r requirements.txt
 # Temp install command that will be handled by requirements.txt
 RUN python3.11 -m pip install git+https://github.com/craigkai/kivy@initialize-logger
 
+RUN python3.11 /digitaldash/themes/loadThemes.py
+
 # SETUP OUR SYSTEMD SCRIPTS
 RUN cp docker/*.service /etc/systemd/system/
 
