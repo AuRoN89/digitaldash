@@ -4,11 +4,12 @@
 # looking at you Test.
 import os
 import pathlib
+
 WORKING_PATH = str(pathlib.Path(__file__).parent.absolute())
 os.environ["KIVY_HOME"] = WORKING_PATH + "/etc/kivy/"
 
 # Comment the line below out to see logs in terminal
-os.environ["KIVY_NO_CONSOLELOG"] = "1"
+# os.environ["KIVY_NO_CONSOLELOG"] = "1"
 
 # Dependent modules and packages
 import getopt
