@@ -5,7 +5,25 @@ LABEL description="Dockerfile to build DD ISO"
 ENV CARGO_NET_GIT_FETCH_WITH_CLI=true
 ENV PATH="/root/.cargo/bin:$PATH"
 
+ADD docker/config.txt /boot/
+ADD docker/dd_gui.service /etc/systemd/system/
+ADD docker/dd_webapp.service /etc/systemd/system/
+
+LABEL com.iximiuz-project="docker-to-linux"
+RUN apt-get -y update
+RUN apt-get -y install --no-install-recommends \
+  linux-image-amd64 \
+  systemd-sysv
+RUN echo "root:root" | chpasswd
+
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y update
+
+RUN apt-get -y install --no-install-recommends \
+  linux-image-amd64
+
+RUN apt-get -y install --no-install-recommends \
+  systemd-sysv
+
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install \
     python3-setuptools git-core python3-dev git\
     wget build-essential curl python3-pip libssl-dev \
@@ -23,9 +41,6 @@ RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y --
 # INSTALL OUR REPOs
 RUN git clone --branch docker https://github.com/kaiserengineering/digitaldash
 
-# COPY CONFIG.txt TO /boot
-RUN cp digitaldash/docker/config.txt /boot/
-
 # INSTALL STANDALONE PYTHON
 RUN wget https://www.python.org/ftp/python/3.11.1/Python-3.11.1.tar.xz
 RUN tar -xf Python-3.11.1.tar.xz
@@ -42,9 +57,6 @@ RUN python3.11 -m pip install -r requirements.txt
 RUN python3.11 -m pip install git+https://github.com/craigkai/kivy@initialize-logger
 
 RUN python3.11 /digitaldash/themes/loadThemes.py
-
-# SETUP OUR SYSTEMD SCRIPTS
-RUN cp docker/*.service /etc/systemd/system/
 
 WORKDIR "/digitaldash/frontend"
 
