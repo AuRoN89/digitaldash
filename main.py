@@ -241,10 +241,10 @@ class GUI(App):
                 if obj.pid:
                     try:
                         obj.setData(data[obj.pid.value])
-                    except Exception:
+                    except Exception as ex:
                         Logger.error(
-                            "GUI: Firmware did not provide data value for key: %s",
-                            obj.pid.value,
+                            "GUI: Error setting gauge value: %s",
+                            ex,
                         )
                 else:
                     # This is for widgets that subscribe to
