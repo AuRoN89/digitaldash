@@ -92,8 +92,8 @@ KE_PID = {
         "shortName": "ECT",
         "shortDesc": "Coolant Temp",
         "units": {
-            "PID_UNITS_CELSIUS": {"Min": -40, "Max": 215, "decimals": "0"},
-            "PID_UNITS_FAHRENHEIT": {"Min": -40, "Max": 400, "decimals": "1"},
+            "PID_UNITS_CELSIUS": {"Min": -60, "Max": 194, "decimals": "0"},
+            "PID_UNITS_FAHRENHEIT": {"Min": -75, "Max": 380, "decimals": "1"},
         },
     },
     "0x0106": {
@@ -187,8 +187,8 @@ KE_PID = {
         "shortName": "Oil Temp",
         "shortDesc": "Oil Temp",
         "units": {
-            "PID_UNITS_CELSIUS": {"Min": -40, "Max": 200, "decimals": "0"},
-            "PID_UNITS_FAHRENHEIT": {"Min": -40, "Max": 400, "decimals": "1"},
+            "PID_UNITS_CELSIUS": {"Min": -40, "Max": 150, "decimals": "0"},
+            "PID_UNITS_FAHRENHEIT": {"Min": -40, "Max": 300, "decimals": "1"},
         },
     },
     "0x016F": {
@@ -347,6 +347,46 @@ KE_PID = {
         "name": "CRUISE_CONTROL_CAN_BUTTON",
         "shortName": "CAN Button",
         "shortDesc": "Cruise Control CAN Button",
+        "units": {
+            "PID_UNITS_NONE": {"Min": 0, "Max": 1, "decimals": "0"},
+        },
+    },
+    "0xDE0307": {
+        "name": "CRUISE_CONTROL_DIST_PLUS_BUTTON",
+        "shortName": "DIST+ Button",
+        "shortDesc": "Cruise Control DIST+ Button",
+        "units": {
+            "PID_UNITS_NONE": {"Min": 0, "Max": 1, "decimals": "0"},
+        },
+    },
+    "0xDE0308": {
+        "name": "CRUISE_CONTROL_DIST_MINUS_BUTTON",
+        "shortName": "DIST- Button",
+        "shortDesc": "Cruise Control DIST- Button",
+        "units": {
+            "PID_UNITS_NONE": {"Min": 0, "Max": 1, "decimals": "0"},
+        },
+    },
+    "0xDE0309": {
+        "name": "CRUISE_CONTROL_RES_PLUS_BUTTON",
+        "shortName": "RES+ Button",
+        "shortDesc": "Cruise Control RES+ Button",
+        "units": {
+            "PID_UNITS_NONE": {"Min": 0, "Max": 1, "decimals": "0"},
+        },
+    },
+    "0xDE0401": {
+        "name": "ESC_SPORT_MODE_BUTTON",
+        "shortName": "CAN Button",
+        "shortDesc": "ESC Sport (Short Press Action)",
+        "units": {
+            "PID_UNITS_NONE": {"Min": 0, "Max": 1, "decimals": "0"},
+        },
+    },
+    "0xDE0402": {
+        "name": "ESC_OFF_MODE_BUTTON",
+        "shortName": "ESC Off",
+        "shortDesc": "ESC Off (Long Press Action)",
         "units": {
             "PID_UNITS_NONE": {"Min": 0, "Max": 1, "decimals": "0"},
         },
