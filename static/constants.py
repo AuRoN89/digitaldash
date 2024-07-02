@@ -187,8 +187,8 @@ KE_PID = {
         "shortName": "Oil Temp",
         "shortDesc": "Oil Temp",
         "units": {
-            "PID_UNITS_CELSIUS": {"Min": -40, "Max": 150, "decimals": "0"},
-            "PID_UNITS_FAHRENHEIT": {"Min": -40, "Max": 300, "decimals": "1"},
+            "PID_UNITS_CELSIUS": {"Min": -60, "Max": 150, "decimals": "0"},
+            "PID_UNITS_FAHRENHEIT": {"Min": -60, "Max": 300, "decimals": "1"},
         },
     },
     "0x016F": {
@@ -197,8 +197,8 @@ KE_PID = {
         "shortDesc": "Boost",
         "units": {
             "PID_UNITS_KPA": {"Min": 0, "Max": 170, "decimals": "0"},
-            "PID_UNITS_PSI": {"Min": 0, "Max": 24, "decimals": "1"},
-            "PID_UNITS_BAR": {"Min": 0, "Max": 1.70, "decimals": "2"},
+            "PID_UNITS_PSI": {"Min": 0, "Max": 25, "decimals": "1"},
+            "PID_UNITS_BAR": {"Min": 0, "Max": 2, "decimals": "2"},
         },
     },
     "0xC16F": {
@@ -207,8 +207,8 @@ KE_PID = {
         "shortDesc": "Boost/Vacuum",
         "units": {
             "PID_UNITS_KPA": {"Min": -82, "Max": 170, "decimals": "0"},
-            "PID_UNITS_PSI": {"Min": -12, "Max": 24, "decimals": "1"},
-            "PID_UNITS_BAR": {"Min": -1, "Max": 1.70, "decimals": "2"},
+            "PID_UNITS_PSI": {"Min": -12, "Max": 25, "decimals": "1"},
+            "PID_UNITS_BAR": {"Min": -1, "Max": 2, "decimals": "2"},
         },
     },
     "0x220301": {
