@@ -376,19 +376,11 @@ KE_PID = {
         },
     },
     "0xDE0401": {
-        "name": "ESC_SPORT_MODE_BUTTON",
-        "shortName": "CAN Button",
-        "shortDesc": "ESC Sport (Short Press Action)",
+        "name": "ESC_BUTTON",
+        "shortName": "ESC Button",
+        "shortDesc": "ESC Status (0 = Normal, 1 = Sport, 2 = Off)",
         "units": {
-            "PID_UNITS_NONE": {"Min": 0, "Max": 1, "decimals": "0"},
-        },
-    },
-    "0xDE0402": {
-        "name": "ESC_OFF_MODE_BUTTON",
-        "shortName": "ESC Off",
-        "shortDesc": "ESC Off (Long Press Action)",
-        "units": {
-            "PID_UNITS_NONE": {"Min": 0, "Max": 1, "decimals": "0"},
+            "PID_UNITS_NONE": {"Min": 0, "Max": 2, "decimals": "0"},
         },
     },
     "0xDE01C8": {
