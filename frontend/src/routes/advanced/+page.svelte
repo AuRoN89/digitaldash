@@ -19,20 +19,20 @@
 </script>
 
 <div class="container col-sm-10 col-md-6 pr-4 pl-4">
-<form
-  method="POST"
-  class="col-12 advanced"
-  action="?/updateConfig"
-  use:enhance={() => {
-    return async ({ result }) => {
-      result.data.id = $session.count;
-      $session.configuration = result.data.config;
-      $session.actions = [result.data];
+  <form
+    method="POST"
+    class="col-12 advanced"
+    action="?/updateConfig"
+    use:enhance={() => {
+      return async ({ result }) => {
+        result.data.id = $session.count;
+        $session.configuration = result.data.config;
+        $session.actions = [result.data];
 
-      goto('/');
-    };
-  }}
->
+        goto('/');
+      };
+    }}
+  >
 
   <h1>Advanced</h1>
   <p>Settings for advanced users, beware of what you change!</p>

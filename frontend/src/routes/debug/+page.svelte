@@ -36,11 +36,25 @@
     {/each}
   </select>
 
-  <div class="container col-sm-12 col-md-12 border">
+  <div class="container form-control col-sm-12 col-md-12 border">
     <pre>
       <code>
-        {content}
+        {#if content}
+          {content}
+        {:else}
+          No logs available.
+        {/if}
       </code>
     </pre>
   </div>
+
+  <p></p>
+
+  <form
+    method="POST"
+    action="?/reboot"
+  >
+    <h4>Reboot KE Dash</h4>
+    <p><button type="submit" class="btn btn-primary btn-sm btn-block">Reboot</button></p>
+  </form>
 </div>

@@ -1,4 +1,6 @@
 import { ReadLog, ReadTemp } from "$lib/server/Debug";
+import type { Actions } from "./$types";
+import { exec } from 'child_process';
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load() {
@@ -15,3 +17,21 @@ export async function load() {
     cpuTemp: cpuTemp,
   };
 }
+
+export function _Reboot() {
+  return new Promise((resolve, reject) => {
+      exec('reboot', (error, stdout, stderr) => {
+          if (error) {
+              reject(`exec error: ${error}`);
+          }
+          resolve(stdout ? stdout : stderr);
+      });
+  });
+}
+
+export const actions: Actions = {
+  reboot: async (_) => {
+    await _Reboot();
+    return 1;
+  },
+};
