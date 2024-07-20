@@ -1,5 +1,6 @@
 <script lang="ts">
   import { page } from "$app/stores";
+  import { goto } from '$app/navigation';
 
   import { onMount } from 'svelte';
 
@@ -53,6 +54,10 @@
   <form
     method="POST"
     action="?/reboot"
+
+    on:submit={() => {
+        goto('/');
+    }}
   >
     <h4>Reboot KE Dash</h4>
     <p><button type="submit" class="btn btn-primary btn-sm btn-block">Reboot</button></p>
